@@ -1,13 +1,13 @@
-## BuckShelf
+# BuckShelf
 
-# Anggota Kelompok
+## Anggota Kelompok
 | Nama                      | NIM               |
 | ------------------------- | ----------------- |
 | Dharma | G6401211 |
 | Fais | G6401211 |
 | Muhammad Tegar Santoso    | G6401211086       |
 
-# Deskripsi
+## Deskripsi
 BuckShelf adalah ....
 
 
