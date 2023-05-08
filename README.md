@@ -3,8 +3,8 @@
 ## Anggota Kelompok
 | Nama                      | NIM               |
 | ------------------------- | ----------------- |
-| Dharma | G6401211 |
-| Fais | G6401211 |
+| Dharma Pratama | G6401211 |
+| Fais Fadilah Prasetyo | G6401211 |
 | Muhammad Tegar Santoso    | G6401211086       |
 
 ## Deskripsi
