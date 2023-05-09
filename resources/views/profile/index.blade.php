@@ -10,9 +10,6 @@
             <h2>Email: {{ auth()->user()->email }}</h2>
         </li>
         <li>
-            <h2>Username: {{ auth()->user()->username }}</h2>
-        </li>
-        <li>
             <h2>Phone Number: {{ auth()->user()->phone }}</h2>
         </li>
         <li>

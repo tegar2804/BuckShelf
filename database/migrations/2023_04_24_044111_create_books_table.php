@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('isbn')->unique();
             $table->string('title');
             $table->string('slug')->unique();
+            $table->string('cover')->nullable();
             $table->integer('price');
             $table->integer('page');
             $table->text('desc');

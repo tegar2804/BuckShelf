@@ -11,11 +11,15 @@ class User extends Authenticatable
 
     protected $guarded = ['id'];
 
-    public function book(){
+    public function upload(){
         return $this->hasMany(Book::class);
     }
 
     public function collection(){
         return $this->hasMany(Collection::class);
+    }
+
+    public function book(){
+        return $this->belongsToMany(Book::class, 'collections', 'user_id', 'book_id');
     }
 }

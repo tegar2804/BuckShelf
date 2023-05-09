@@ -24,10 +24,13 @@
             </form>
         </div>
         @auth
-            <form action="/logout" method="post">
-                @csrf
-                <button>Log out</button>
-            </form>
+            <div>
+                <a href="/profile">profile</a>
+                <form action="/logout" method="post">
+                    @csrf
+                    <button>Log out</button>
+                </form>
+            </div>
         @else
             <a class="btn btn-primary" href="/login">Login</a>
         @endauth

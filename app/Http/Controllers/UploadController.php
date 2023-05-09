@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use Illuminate\Support\Facades\Storage;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Contracts\Cache\Store;
 
 class UploadController extends Controller
 {
@@ -36,19 +38,21 @@ class UploadController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {   
         $validated = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:books',
             'isbn' => 'required|unique:books|numeric|min_digits:8',
             'price' => 'required|numeric|min_digits:4',
             'categories' => 'required',
+            'cover' => 'required|image|file|max:102400',
             'desc' => 'required'
         ]);
         $validated['author_id'] = auth()->user()->id;
         $validated['page'] = 50;
         $category_book = $validated['categories'];
         $validated['published_at'] = now();
+        $validated['cover'] = $request->file('cover')->store('cover-images');
         unset($validated['categories']);
         
         $book = Book::create($validated);
@@ -62,7 +66,10 @@ class UploadController extends Controller
      */
     public function show(Book $upload)
     {
-        return $upload;
+        return view('book', [
+            'title' => $upload->title,
+            'book' => $upload
+        ]);
     }
 
     /**
@@ -92,6 +99,9 @@ class UploadController extends Controller
         if($request->slug != $upload->slug){
             $rules['slug'] = 'required|unique:books';
         }
+        if($request->file('cover')){
+            $rules['cover'] = 'required|image|file|max:102400';
+        }
         if($request->isbn != $upload->isbn){
             $rules['isbn'] = 'required|unique:books|numeric|min_digits:8';
         }
@@ -103,6 +113,12 @@ class UploadController extends Controller
         $category_book = $validated['categories'];
         $validated['published_at'] = $upload->published_at;
         unset($validated['categories']);
+        if($request->file('cover')){
+            if($upload->cover){
+                Storage::delete($upload->cover);
+            }
+            $validated['cover'] = $request->file('cover')->store('cover-images');
+        }
 
         Book::where('id', $upload->id)->update($validated);
         $upload->category()->sync($category_book);
@@ -115,6 +131,7 @@ class UploadController extends Controller
      */
     public function destroy(Book $upload)
     {
+        Storage::delete($upload->cover);
         Book::destroy($upload->id);
         return redirect('/upload')->with('success', 'Berhasil Menghapus Buku!');
     }
