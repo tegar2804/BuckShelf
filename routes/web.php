@@ -35,6 +35,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
         Route::get('/profile', 'UserController@index');
 
+        Route::put('/book/{book:slug}', 'CollectionController@rate');
         Route::get('/collection', 'CollectionController@index');
 
         Route::get('/upload/checkSlug', 'UploadController@checkSlug');

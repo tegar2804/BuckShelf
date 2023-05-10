@@ -3,9 +3,6 @@
 @section('container')
     <h1>Book!!!</h1>
     @auth
-        @if(auth()->user()->book->find($book->id))
-            {{ auth()->user()->book->find($book->id)->collection[0]->rate }}
-        @endif
         @if(auth()->user()->id == $book->author->id)
             <a href=""><h4>Edit</h4></a>
             <a href=""><h4>Delete</h4></a>
@@ -27,9 +24,27 @@
     <p>{{ $book->desc }}</p>
     @auth
         @if(auth()->user()->book->find($book->id))
-            <a href=""><h4>Rating</h4></a>
-        @else
-            <h4>Rating</h4>
+            {{-- {{ auth()->user()->book->find($book->id)->collection[0]->rate }} --}}
+            <form action="/book/{{ $book->slug }}" method="post">
+                @method('put')
+                @csrf
+                <div class="mb-3">
+                    <label for="rate" class="form-label">Rating: ({{ auth()->user()->book->find($book->id)->collection[0]->rate }})</label>
+                    <select class="form-select" id="rate" name="rate">
+                        @for($i = 0; $i <= 5; $i++)
+                        <option value="{{ $i }}">{{ $i }}</option>
+                        @endfor
+                    </select>
+                    @error('rate')
+                        <div class="invalid-feedback">
+                            <p class="text-danger">{{ $message }}</p>
+                        </div>
+                    @enderror
+                </div>
+                <button type="submit" class="btn btn-primary">submit</button>
+            </form>
         @endif
+    @else
+        <a href="#"><h4>Rating</h4></a>
     @endauth
 @endsection
