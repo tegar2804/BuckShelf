@@ -3,12 +3,12 @@
 @section('container')
     <h1>Book!!!</h1>
     @auth
-        @if(auth()->user()->id == $book->author->id)
+        @can('author', [$book])
             <a href=""><h4>Edit</h4></a>
             <a href=""><h4>Delete</h4></a>
-        @elseif(!auth()->user()->book->find($book->id))
+        @elsecannot('purchased', [$book])
             <a href=""><h4>keranjang</h4></a>
-        @endif
+        @endcan
     @endauth
     <h2>{{ $book->title }}</h2>
     <img style="border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 450px;" src="{{ asset('storage/'. $book->cover) }}" alt="cover buku '{{ $book->title }}'">
@@ -23,7 +23,7 @@
     <h3>desc: </h3>
     <p>{{ $book->desc }}</p>
     @auth
-        @if(auth()->user()->book->find($book->id))
+        @can('purchased', [$book])
             {{-- {{ auth()->user()->book->find($book->id)->collection[0]->rate }} --}}
             <form action="/book/{{ $book->slug }}" method="post">
                 @method('put')
@@ -43,7 +43,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">submit</button>
             </form>
-        @endif
+        @endcan
     @else
         <a href="#"><h4>Rating</h4></a>
     @endauth
