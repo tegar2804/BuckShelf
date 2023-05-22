@@ -28,14 +28,14 @@ body {
   overflow: hidden;
 }
 
-.masuk {
+.headmasuk {
   width: 124px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 342px;
+  top: 250px;
   left: 68px;
   font-family: Raleway;
-  font-weight: SemiBold;
+  font-weight: Bold;
   font-size: 40px;
   opacity: 1;
   text-align: center;
@@ -201,7 +201,7 @@ body {
 }
 .masuk {
   width: 120px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 0.971);
   position: absolute;
   top: 13px;
   left: 80px;
