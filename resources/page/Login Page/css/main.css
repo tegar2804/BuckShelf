@@ -23,7 +23,7 @@ body {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 123px;
+  top: 100px;
   left: 72px;
   overflow: hidden;
 }
@@ -40,7 +40,7 @@ body {
   opacity: 1;
   text-align: center;
 }
-.linemasuk {
+.grupkatasandi {
   width: 490px;
   height: 71px;
   background: url("../images/v2_13.png");
@@ -49,7 +49,7 @@ body {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 542px;
+  top: 400px;
   left: 72px;
   overflow: hidden;
 }/*
@@ -126,7 +126,7 @@ body {
   left: 1px;
   border: 2px solid rgba(0,0,0,1);
 }
-.v2_10 {
+.grupemail {
   width: 449px;
   height: 71px;
   background: url("../images/v2_10.png");
@@ -135,7 +135,7 @@ body {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 430px;
+  top: 300px;
   left: 72px;
   overflow: hidden;
 }
@@ -164,7 +164,7 @@ body {
   width: 167px;
   color: rgba(79,78,78,1);
   position: absolute;
-  top: 620px;
+  top: 470px;
   left: 60px;
   font-family: Inter;
   font-weight: Light;
@@ -181,7 +181,7 @@ body {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 713px;
+  top: 550px;
   left: 151px;
   overflow: hidden;
 }
@@ -203,7 +203,7 @@ body {
   width: 120px;
   color: rgba(255,255,255,1);
   position: absolute;
-  top: 17px;
+  top: 13px;
   left: 80px;
   font-family: Inter;
   font-weight: Regular;
@@ -211,7 +211,7 @@ body {
   opacity: 1;
   text-align: center;
 }
-.v2_21 {
+.grupdaftar {
   width: 279px;
   height: 70px;
   background: url("../images/v2_21.png");
@@ -220,11 +220,11 @@ body {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 841px;
+  top: 680px;
   left: 151px;
   overflow: hidden;
 }
-.v2_22 {
+.squaredaftar {
   width: 279px;
   height: 70px;
   background: rgba(255,255,255,1);
@@ -239,11 +239,11 @@ body {
   border-bottom-right-radius: 20px;
   overflow: hidden;
 }
-.v8_2213 {
+.daftar{
   width: 120px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 17px;
+  top: 13px;
   left: 80px;
   font-family: Inter;
   font-weight: Regular;
@@ -251,7 +251,7 @@ body {
   opacity: 1;
   text-align: center;
 }
-.v2_24 {
+.grupatau {
   width: 436px;
   height: 22px;
   background: url("../images/v2_24.png");
@@ -260,11 +260,11 @@ body {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 801px;
+  top: 638px;
   left: 79px;
   overflow: hidden;
 }
-.v2_25 {
+.leftlineatau {
   width: 181px;
   background: url("../images/v2_25.png");
   opacity: 1;
@@ -273,7 +273,7 @@ body {
   left: 0px;
   border: 2px solid rgba(79,78,78,1);
 }
-.v2_26 {
+.rightlineatau {
   width: 191px;
   background: url("../images/v2_26.png");
   opacity: 1;
@@ -282,7 +282,7 @@ body {
   left: 245px;
   border: 2px solid rgba(79,78,78,1);
 }
-.v2_27 {
+.atau {
   width: 54px;
   color: rgba(0,0,0,1);
   position: absolute;
@@ -294,19 +294,20 @@ body {
   opacity: 1;
   text-align: left;
 }
-.v93_777 {
+.ilustration {
   width: 610px;
   height: 610px;
-  background: url("../images/v93_777.png");
+  background: url("../images/ilustration.gif");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
   position: absolute;
   top: 157px;
-  left: 758px;
+  left: 800px;
   overflow: hidden;
 }
+/*
 .v93_778 {
   width: 610px;
   height: 610px;
@@ -319,4 +320,4 @@ body {
   top: 0px;
   left: 0px;
   overflow: hidden;
-}
+}*/
