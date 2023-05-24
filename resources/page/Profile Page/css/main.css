@@ -442,3 +442,18 @@ body {
 .logout{
   margin-left: 1rem;
 }
+.hanging-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.hanging-navbar .navbar {
+  height: 60px;
+}
+
+.hanging-navbar .navbar-brand img {
+  height: 40px;
+}
