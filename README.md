@@ -4,7 +4,7 @@
 | Nama                      | NIM               |
 | ------------------------- | ----------------- |
 | Dharma Pratama | G6401211 |
-| Fais Fadilah Prasetyo | G6401211 |
+| Fais Fadilah Prasetyo | G6401211057
 | Muhammad Tegar Santoso    | G6401211086       |
 
 ## Deskripsi
