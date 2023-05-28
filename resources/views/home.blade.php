@@ -6,28 +6,47 @@
     @else
         <h1 class="mb-5">Selamat Datang, Guest!</h1>
     @endauth
-    <h3 class="mb-3">Rekomendasi</h3>
-    @foreach($books as $book)
+
+    <h2>Rekomendasi Untuk Anda</h2>
+    <div class="book-list mb-4">
+        @foreach($books as $book)
         <a href="/book/{{ $book->slug }}">
-        <div class="col p-3 my-2 rounded bg-secondary text-white">
-            <p>{{ $book->title }} <br> {{ $book->author->name}}</p>
-        </div>
+            <div class="book">
+                <div class="book-frame">
+                    <img src="{{ asset('storage/'.$book->cover) }}" alt="{{ $book->title }}">
+                </div>
+                <h3>{{ $book->title }}</h3>
+                <p>{{ 'Rp'.number_format($book->price, 0, ',', '.') }}</p>
+            </div>
         </a>
-    @endforeach
-    <h3 class="mt-5 mb-3">Rilis Terbaru</h3>
-    @foreach($books as $book)
+        @endforeach
+    </div>
+    <h2>Koleksi Baru Kami</h2>
+    <div class="book-list mb-4">
+        @foreach($books as $book)
         <a href="/book/{{ $book->slug }}">
-        <div class="col p-3 my-2 rounded bg-secondary text-white">
-            <p>{{ $book->title }} <br> {{ $book->author->name}}</p>
-        </div>
+            <div class="book">
+                <div class="book-frame">
+                    <img src="{{ asset('storage/'.$book->cover) }}" alt="{{ $book->title }}">
+                </div>
+                <h3>{{ $book->title }}</h3>
+                <p>{{ 'Rp'.number_format($book->price, 0, ',', '.') }}</p>
+            </div>
         </a>
-    @endforeach
-    <h3 class="mt-5 mb-3">Feeling Lucky?</h3>
-    @foreach($books_ran as $book)
+        @endforeach
+    </div>
+    <h2>Saya Lagi Beruntung?</h2>
+    <div class="book-list mb-4">
+        @foreach($books_ran as $book)
         <a href="/book/{{ $book->slug }}">
-        <div class="col p-3 my-2 rounded bg-secondary text-white">
-            <p>{{ $book->title }} <br> {{ $book->author->name}}</p>
-        </div>
+            <div class="book">
+                <div class="book-frame">
+                    <img src="{{ asset('storage/'.$book->cover) }}" alt="{{ $book->title }}">
+                </div>
+                <h3>{{ $book->title }}</h3>
+                <p>{{ 'Rp'.number_format($book->price, 0, ',', '.') }}</p>
+            </div>
         </a>
-    @endforeach
+        @endforeach
+    </div>
 @endsection

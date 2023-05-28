@@ -1,0 +1,95 @@
+/* BODY */
+
+.container.content {
+  text-align: left;
+  margin: 20px auto;
+  width: 80%;
+  min-height: 500px;
+}
+
+.container h1 {
+  font-family: Inter;
+  font-weight: Medium;
+  margin-bottom: 20px;
+}
+
+.container h2 {
+  font-family: Inter;
+  font-weight: Medium;
+  color: rgb(70, 70, 70);
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  text-align: center;
+}
+
+.book-list a {
+  text-decoration: none;
+}
+
+.book {
+  width: 200px;
+  margin: 10px 35px 10px 0px;
+  border: none;
+}
+
+.book-frame {
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: rgb(3, 3, 52);
+  border: 3px solid rgba(0,0,0,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.book img {
+  object-fit: cover;
+  border-radius: 10px;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+.book h3 {
+  font-size: 18px;
+  color: black;
+  font-family: Inter;
+  font-weight: Medium;
+}
+
+.book p {
+  font-size: 20px;
+  font-family: Inter;
+  font-weight: bold;
+  color:black;
+}
+
+.search {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.upload-button{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+  margin-bottom: 10px;
+}
+
+.upload-button a button{
+  width: 200px;
+  height: 50px;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  background-color: rgb(3, 3, 52);
+  border: 3px solid rgba(0,0,0,1);
+  position: relative;
+  border-radius: 20px;
+}

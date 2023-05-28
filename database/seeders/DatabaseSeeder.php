@@ -17,23 +17,47 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // \App\Models\User::factory(10)->create();
-
+        
         User::factory(3)->create();
+        User::create([
+            'email' => 'abcde@gmail.com',
+            'name' => 'Abcde Efghi',
+            'password' => bcrypt('abcde123'),
+            'phone' => '089665311527',
+            'gender' => 'L'
+            // 'isAdmin' => 1
+        ]);
+        
         Book::factory(10)->create();
 
         Category::create([
-            'name' => 'Cat 1',
-            'slug' => 'cat-1'
+            'name' => 'Klasik',
+            'slug' => 'klasik',
+            'image' => 'classic.svg'
         ]);
         
         Category::create([
-            'name' => 'Cat 2',
-            'slug' => 'cat-2'
+            'name' => 'Fiksi',
+            'slug' => 'fiksi',
+            'image' => 'fiction.svg'
         ]);
         
         Category::create([
-            'name' => 'Cat 3',
-            'slug' => 'cat-3'
+            'name' => 'Novel',
+            'slug' => 'novel',
+            'image' => 'novel.svg'
+        ]);
+
+        Category::create([
+            'name' => 'Kamus',
+            'slug' => 'kamus',
+            'image' => 'dict.svg'
+        ]);
+
+        Category::create([
+            'name' => 'Majalah',
+            'slug' => 'majalah',
+            'image' => 'magz.svg'
         ]);
         
         BookCategory::create([

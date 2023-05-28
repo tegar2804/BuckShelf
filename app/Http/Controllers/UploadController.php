@@ -19,6 +19,7 @@ class UploadController extends Controller
     {
         return view('upload.index', [
             'title' => 'Upload',
+            'css_name' => ['navbar', 'books'],
             'books' => Book::where('author_id', auth()->user()->id)->get()
         ]);
     }
@@ -30,6 +31,7 @@ class UploadController extends Controller
     {
         return view('upload.create', [
             'title' => 'Upload',
+            'css_name' => ['navbar'],
             'categories' => Category::all()
         ]);
     }
@@ -38,7 +40,7 @@ class UploadController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {   
+    {
         $validated = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:books',
@@ -68,6 +70,7 @@ class UploadController extends Controller
     {
         return view('book', [
             'title' => $upload->title,
+            'css_name' => ['navbar'],
             'book' => $upload
         ]);
     }
@@ -79,6 +82,7 @@ class UploadController extends Controller
     {
         return view('upload.edit', [
             'title' => 'Upload',
+            'css_name' => ['navbar'],
             'categories' => Category::all(),
             'book' => $upload
         ]);

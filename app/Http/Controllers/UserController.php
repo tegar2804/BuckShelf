@@ -8,7 +8,8 @@ class UserController extends Controller
 {
     public function index(){
         return view('profile.index',[
-            'title' => 'Profile'
+            'title' => 'Profile',
+            'css_name' => ['navbar']
         ]);
     }
 }

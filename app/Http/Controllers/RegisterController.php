@@ -9,9 +9,7 @@ use App\Http\Controllers\Controller;
 class RegisterController extends Controller
 {
     public function index(){
-        return view('auth.register', [
-            'title' => 'Register'
-        ]);
+        return view('auth.register');
     }
 
     public function regis(Request $request){

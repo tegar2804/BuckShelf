@@ -40,8 +40,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
         Route::get('/upload/checkSlug', 'UploadController@checkSlug');
         Route::resource('/upload', 'UploadController');
-
-        //cart
+        
+        Route::get('/cart', 'CartController@index');
 
         //history
         //history/invoice

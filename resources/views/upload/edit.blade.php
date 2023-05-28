@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1>Edit Book</h1>
+    <h1>Edit Buku</h1>
     <a href="/upload">back</a>
     <form action="/upload/{{ $book->slug }}" method="post" enctype="multipart/form-data">
         @method('put')
@@ -49,9 +49,9 @@
         <div class="mb-3">
             <label for="cover" class="form-label">Gambar Sampul</label>
             @if($book->cover)
-            <img class="img-preview img-fluid d-block" style="max-width: 200px" src="{{ asset("storage/".$book->cover) }}">
+            <img class="img-preview img-fluid d-block mb-2" style="max-width: 200px" src="{{ asset("storage/".$book->cover) }}">
             @else
-            <img class="img-preview img-fluid" style="max-width: 200px">
+            <img class="img-preview img-fluid mb-2" style="max-width: 200px">
             @endif
             <input class="form-control" type="file" id="cover" name="cover" onchange="previewCover()">
             @error('cover')

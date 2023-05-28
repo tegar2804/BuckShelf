@@ -11,6 +11,7 @@ class CollectionController extends Controller
     public function index(){
         return view('books', [
             'title' => 'Koleksi',
+            'css_name' => ['navbar', 'books'],
             'header_title' => 'Koleksi Anda',
             'books' => Book::with('author')
                         ->whereIn('id', Collection::where('user_id', auth()->user()->id)

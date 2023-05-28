@@ -9,7 +9,7 @@
             <label for="title" class="form-label">Judul Buku</label>
             <input type="title" class="form-control" id="title" name="title" placeholder="" required value="{{ old('title') }}">
             @error('title')
-                <p class="text-danger mt-1">{{ $message }}</p>
+                <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         <input type="slug" class="form-control" id="slug" name="slug" value="{{ old('slug') }}" hidden>
@@ -17,7 +17,7 @@
             <label for="isbn" class="form-label">ISBN</label>
             <input type="text" class="form-control" id="isbn" name="isbn" placeholder="" required value="{{ old('isbn') }}">
             @error('isbn')
-                <p class="text-danger mt-1">{{ $message }}</p>
+                <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         <div class="mb-3">
@@ -29,7 +29,7 @@
             </select>
             @error('category')
                 <div class="invalid-feedback">
-                    <p class="text-danger mt-1">{{ $message }}</p>
+                    <p class="text-danger">{{ $message }}</p>
                 </div>
             @enderror
         </div>
@@ -37,7 +37,7 @@
             <label for="price" class="form-label">Harga</label>
             <input type="number" class="form-control" id="price" name="price" placeholder="" required value="{{ old('price') }}">
             @error('price')
-                <p class="text-danger mt-1">{{ $message }}</p>
+                <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         {{-- <div class="mb-3">
@@ -46,11 +46,11 @@
         </div> --}}
         <div class="mb-3">
             <label for="cover" class="form-label">Gambar Sampul</label>
-            <img class="img-preview img-fluid" style="max-width: 200px; margin-bottom: 7px;">
+            <img class="img-preview img-fluid" style="max-width: 200px">
             <input class="form-control" type="file" id="cover" name="cover" onchange="previewCover()">
             @error('cover')
                 <div class="invalid-feedback">
-                    <p class="text-danger mt-1">{{ $message }}</p>
+                    <p class="text-danger">{{ $message }}</p>
                 </div>
             @enderror
         </div>
@@ -62,7 +62,7 @@
             <label for="desc" class="form-label">Deskripsi</label>
             <input type="textbox" class="form-control" id="desc" name="desc" placeholder="" required value="{{ old('desc') }}">
             @error('desc')
-                <p class="text-danger mt-1">{{ $message }}</p>
+                <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
         <button type="submit" class="btn btn-primary">Upload</button>

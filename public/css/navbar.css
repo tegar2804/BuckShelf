@@ -1,0 +1,76 @@
+/* NAVBAR */
+
+*{
+    box-sizing: border-box;
+}
+
+.custom-mt {
+  margin-top: 6rem;
+}
+
+body {
+  font-size: 14px;
+}
+
+.logout{
+  margin-left: 1rem;
+}
+
+.hanging-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.hanging-navbar .navbar {
+    height: 80px;
+}
+
+.hanging-navbar .navbar .container-fluid{
+    max-width: 1410px;
+}
+
+.hanging-navbar .navbar-brand .logo {
+    height: 40px;
+}
+
+.cart {
+    padding-right: 20px;
+    border-right: 2px solid black;
+  }
+  
+.btn .login{
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  background-color: rgb(3, 3, 52);
+  border: 3px solid rgba(0,0,0,1);
+}
+
+.profile {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.upload-button{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-button a button{
+  width: 80px;
+  height: 38px;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  background-color: rgb(3, 3, 52);
+  border: 3px solid rgba(0,0,0,1);
+  position: relative;
+  border-radius: 10px;
+}
+
+.logout{
+  border: none;
+}

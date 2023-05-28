@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\Book;
+use App\Models\Order;
+use App\Models\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -21,5 +24,9 @@ class User extends Authenticatable
 
     public function book(){
         return $this->belongsToMany(Book::class, 'collections', 'user_id', 'book_id');
+    }
+
+    public function order(){
+        return $this->hasMany(Order::class);
     }
 }
