@@ -29,11 +29,17 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::post('/register', 'RegisterController@regis');
         //forgot-pass
     });
-
+    
+    Route::group(['middleware' => ['isAdmin']], function() {
+    
+    });
+    
     Route::group(['middleware' => ['auth']], function() {
         Route::post('/logout', 'LoginController@logout');
 
         Route::get('/profile', 'UserController@index');
+        Route::get('/profile/{user:email}/edit', 'UserController@edit');
+        Route::put('/profile/{user:email}', 'UserController@update');
 
         Route::put('/book/{book:slug}', 'CollectionController@rate');
         Route::get('/collection', 'CollectionController@index');
@@ -42,8 +48,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::resource('/upload', 'UploadController');
         
         Route::get('/cart', 'CartController@index');
-
-        //history
-        //history/invoice
+        Route::post('/cart', 'CartController@addItem');
+        Route::delete('/cart/{order_id}/{book_id}', 'CartController@removeItem');
+        Route::put('/cart/{order}', 'CartController@payOrder');
+        Route::get('/invoice/{order:id}', 'HistoryController@index');
     });
 });

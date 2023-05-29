@@ -10,4 +10,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Collection extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }

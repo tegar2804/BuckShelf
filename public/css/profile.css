@@ -1,0 +1,198 @@
+.container.content {
+    text-align: left;
+    margin: 20px auto;
+    width: 80%;
+    min-height: 500px;
+}
+
+.row {
+  display: flex;
+  padding-top: 50px;
+}
+
+.left-container {
+    padding: 0px;
+    margin: 0px 13px;
+    height: 600px;
+    flex-basis: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    padding: 0px;
+    margin: 0px 13px;
+    height: 300px;
+    max-width: 300px;
+    border-radius: 50%;
+    background-color: rgb(3, 3, 52);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid black;
+    height: 300px;
+    width: 300px;
+}
+
+.info-container {
+    flex: 2;
+    padding: 10px;
+    margin: 0px 10px;
+    color: black;
+    font-family: Inter;
+    font-weight: Medium;
+    flex-basis: 35%;
+}
+
+.left-container .edit{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-preview{
+    margin-bottom: 20px;
+}
+
+.left-container button{
+    margin: 10px 20px;
+    padding: 0px 10px;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    background-color: #ffc107;
+    border: 2px solid rgba(0,0,0,1);
+    position: relative;
+    border-radius: 10px;
+}
+
+
+.info-container .detail{
+    display: flex;
+    margin: 20px 0;
+}
+.info-container p{
+    font-size: 24px;
+}
+
+.info-container .desc{
+    text-align: justify;
+}
+
+.info-container .left{
+    flex-basis: 40%;
+}
+
+.button-container {
+  flex: 1;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  background-color: rgb(3, 3, 52);
+  border: 3px solid rgba(0,0,0,1);
+  position: relative;
+  border-radius: 10px;
+}
+
+.star-container {
+    display: flex;
+    padding: 50px 0px;
+    justify-content: center;
+}
+
+.star-box {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    width: 60%;
+    display: flex;
+    padding: 50px 0px;
+}
+
+.star-left {
+    padding: 0px;
+    margin: 0px 13px;
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.star-left .rating-box{
+    text-align: center;
+}
+
+
+.star-left .rating-box h1{
+    font-weight: bold;
+}
+
+.star-left .rating-box h6{
+    font-weight: bold;
+}
+
+.star-right{
+    padding: 0px;
+    margin: 0px 13px;
+    flex-basis: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.star-right .all-rate{
+    width: 100%;
+    display: flex;
+}
+
+.star-right .all-rate ul{
+    list-style-type: none;
+    font-size: medium;
+    font-weight: 500;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.star-right .all-rate .rate-level{
+    flex-basis: 20%;
+}
+
+.star-right .all-rate .rate-vis{
+    flex-basis: 40%;
+}
+
+.star-right .all-rate .rate-total{
+    flex-basis: 40%;
+}
+
+.star-right .all-rate ul li{
+    margin-bottom: 5px;
+}
+
+.star-right .your-rate{
+    border-top: 3px solid black;
+    margin-top: 20px;
+    padding-top: 10px;
+    margin-left: 10px;
+    width: 70%;
+}
+
+.star-active{
+    color: #ffc107;
+}
+
+.star-inactive{
+    color: rgba(82, 81, 81, 0.717);
+}

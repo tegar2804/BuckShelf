@@ -1,0 +1,309 @@
+.container.content {
+  text-align: left;
+  margin: 20px auto;
+  width: 80%;
+  min-height: 500px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  margin-left: 30px;
+}
+
+.transparent-container {
+    width: 1000px; /* Adjust the width as needed */
+    height: 500px; /* Adjust the height as needed */
+    background-color: transparent;
+    position: absolute;
+    top: 175px;
+    left: 200px;
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Transparent border */
+}
+  
+h1{
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+.invoice-container{
+  font-weight: bolder;
+  border-radius: 20px;
+  font-size: 25px;
+  color: black;
+  font-family: Inter;
+  font-weight: Medium;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border: 3px solid black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+.invoice-container ul{
+  list-style: none;
+}
+
+  .sheet {
+    width: 100%;
+    height: 1500px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .transparan {
+    width: 926px;
+    height: 150px;
+    background: url("../images/v26_383.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    top: 50px;
+    left: 10px;
+    overflow: hidden;
+  }
+  .box {
+    width: 926px;
+    height: 150px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 3px solid rgba(0,0,0,1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  .order_id {
+    width: 800px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 22px;
+    left: 43px;
+    font-family: Inter;
+    font-weight: Semi Bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: left;
+  }
+  .harga {
+    width: 179px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 72px;
+    left: 43px;
+    font-family: Inter;
+    font-weight: Bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: left;
+  }
+  .jumlah {
+    width: 156px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 80px;
+    left: 744px;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+  }
+  
+  .tanggal_order {
+    width: 222px;
+    color: rgba(0,0,0,1);
+    position: relative;
+    top: 10px;
+    left: 10px;
+    font-family: Inter;
+    font-weight: Semi Bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: left;
+  }
+  .nama_laman {
+    width: 335px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 100px;
+    left: 545px;
+    font-family: Raleway;
+    font-weight: SemiBold;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+  }
+  
+  /* Contoh implementasi box lebih dari 1 */
+  .transparent-container2 {
+    width: 1000px; /* Adjust the width as needed */
+    height: 500px; /* Adjust the height as needed */
+    background-color: transparent;
+    position: relative;
+    top: 700px;
+    left: 200px;
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Transparent border */
+  }
+  
+  .transparan2 {
+    width: 926px;
+    height: 150px;
+    background: url("../images/v26_383.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    top: 50px;
+    left: 10px;
+    overflow: hidden;
+  }
+  .box2 {
+    width: 926px;
+    height: 150px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 3px solid rgba(0,0,0,1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  .order_id2 {
+    width: 800px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 22px;
+    left: 43px;
+    font-family: Inter;
+    font-weight: Semi Bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: left;
+  }
+  .harga2 {
+    width: 179px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 72px;
+    left: 43px;
+    font-family: Inter;
+    font-weight: Bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: left;
+  }
+  .jumlah2 {
+    width: 156px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 80px;
+    left: 744px;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+  }
+  
+  .tanggal_order2 {
+    width: 222px;
+    color: rgba(0,0,0,1);
+    position: relative;
+    top: 10px;
+    left: 10px;
+    font-family: Inter;
+    font-weight: Semi Bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: left;
+  }
+  
+  .transparan3 {
+    width: 926px;
+    height: 150px;
+    background: url("../images/v26_383.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    top: 75px;
+    left: 10px;
+    overflow: hidden;
+  }
+  .box3 {
+    width: 926px;
+    height: 150px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 3px solid rgba(0,0,0,1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  .order_id3 {
+    width: 800px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 22px;
+    left: 43px;
+    font-family: Inter;
+    font-weight: Semi Bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: left;
+  }
+  .harga3 {
+    width: 179px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 72px;
+    left: 43px;
+    font-family: Inter;
+    font-weight: Bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: left;
+  }
+  .jumlah3 {
+    width: 156px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 80px;
+    left: 744px;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+  }
+  
+  .tanggal_order3 {
+    width: 222px;
+    color: rgba(0,0,0,1);
+    position: relative;
+    top: 10px;
+    left: 10px;
+    font-family: Inter;
+    font-weight: Semi Bold;
+    font-size: 30px;
+    opacity: 1;
+    text-align: left;
+  }

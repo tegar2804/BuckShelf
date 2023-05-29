@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class DetailOrder extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
+    public function book()
+    {
+        return $this->belongsTo(Book::class);
+    }
 }

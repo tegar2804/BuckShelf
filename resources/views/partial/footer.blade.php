@@ -32,7 +32,7 @@
         ></a>
   
         <!-- Github -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/tegar2804/BuckShelf" role="button"
           ><i class="fa fa-github"></i
         ></a>
       </section>
@@ -42,8 +42,7 @@
   
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      Kelompok 6 GG GAMING
     </div>
     <!-- Copyright -->
   </footer>

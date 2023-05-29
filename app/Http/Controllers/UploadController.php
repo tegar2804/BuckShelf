@@ -31,7 +31,7 @@ class UploadController extends Controller
     {
         return view('upload.create', [
             'title' => 'Upload',
-            'css_name' => ['navbar'],
+            'css_name' => ['navbar', 'form'],
             'categories' => Category::all()
         ]);
     }
@@ -51,7 +51,6 @@ class UploadController extends Controller
             'desc' => 'required'
         ]);
         $validated['author_id'] = auth()->user()->id;
-        $validated['page'] = 50;
         $category_book = $validated['categories'];
         $validated['published_at'] = now();
         $validated['cover'] = $request->file('cover')->store('cover-images');
@@ -82,7 +81,7 @@ class UploadController extends Controller
     {
         return view('upload.edit', [
             'title' => 'Upload',
-            'css_name' => ['navbar'],
+            'css_name' => ['navbar', 'form'],
             'categories' => Category::all(),
             'book' => $upload
         ]);
@@ -113,7 +112,6 @@ class UploadController extends Controller
         $validated = $request->validate($rules);
 
         $validated['author_id'] = auth()->user()->id;
-        $validated['page'] = 50;
         $category_book = $validated['categories'];
         $validated['published_at'] = $upload->published_at;
         unset($validated['categories']);

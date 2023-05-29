@@ -1,8 +1,14 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1>Edit Buku</h1>
-    <a href="/upload">back</a>
+    <div class="top-content">
+        <div class="title">
+            <h1>Edit Buku</h1>
+        </div>
+        <div class="back">
+            <a href="/upload"><i class="fas fa-arrow-left"></i></a>
+        </div>
+    </div>
     <form action="/upload/{{ $book->slug }}" method="post" enctype="multipart/form-data">
         @method('put')
         @csrf
@@ -23,11 +29,12 @@
         </div>
         <div class="mb-3">
             <label for="category" class="form-label">Kategori</label>
-            <select class="form-select" id="category" name="categories[]" multiple>
+            <div class="container-cat">
                 @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                <input type="checkbox" name="categories[]" class="btn-check" id="{{ $category->slug }}" autocomplete="off" value="{{ $category->id }}">
+                <label class="btn btn-primary" for="{{ $category->slug }}">{{ $category->name }}</label>
                 @endforeach
-            </select>
+            </div>
             @error('category')
                 <div class="invalid-feedback">
                     <p class="text-danger">{{ $message }}</p>

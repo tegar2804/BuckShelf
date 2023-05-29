@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\Book;
 use App\Models\BookCategory;
 use App\Models\Category;
+use App\Models\Method;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -123,6 +124,18 @@ class DatabaseSeeder extends Seeder
         BookCategory::create([
             'book_id' => 10,
             'category_id' => 3
+        ]);
+
+        Method::create([
+            'name' => 'Gopay'
+        ]);
+        
+        Method::create([
+            'name' => 'Dana'
+        ]);
+        
+        Method::create([
+            'name' => 'ShopeePay'
         ]);
     }
 }

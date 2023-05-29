@@ -5,7 +5,7 @@
     <div class="upload-button">
       <a href="\upload\create">
         <button>
-          Upload Buku    
+          Upload Buku
         </button>
       </a>
     </div>
@@ -23,7 +23,11 @@
             <img src="{{ asset('storage/'.$book->cover) }}" alt="{{ $book->title }}">
           </div>
           <h3>{{ $book->title }}</h3>
-          <a href="/upload/{{ $book->slug }}/edit"><button class="badge bg-warning border-0">EDIT</button></a>
+          <div class="edit">
+            <a href="/upload/{{ $book->slug }}/edit">
+                <button>EDIT</button>
+            </a>
+          </div>
         </div>
       </a>
       @endforeach

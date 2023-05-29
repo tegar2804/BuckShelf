@@ -1,24 +1,41 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1>Profile:</h1>
-    <ul>
-        <li>
-            <h2>Nama: {{ auth()->user()->name }}</h2>
-        </li>
-        <li>
-            <h2>Email: {{ auth()->user()->email }}</h2>
-        </li>
-        <li>
-            <h2>Phone Number: {{ auth()->user()->phone }}</h2>
-        </li>
-        <li>
-            @if(auth()->user()->gender == "L")
-                <h2>Gender: Laki-laki</h2>
-            @endif
-            @if(auth()->user()->gender == "P")
-                <h2>Gender: Perempuan</h2>
-            @endif
-        </li>
-    </ul>
+    @if(session()->has('success'))
+        <div class="alert alert-success" role="alert">
+          {{ session('success') }}
+        </div>
+    @endif
+    <div class="row">
+        <div class="left-container">
+            <div class="image-container">
+                @if(auth()->user()->profile_image)
+                    <img src="{{ asset('storage/'. auth()->user()->profile_image) }}" alt="{{ auth()->user()->name }}">
+                @else
+                    <img src="{{ asset('storage/profile-images/default.png') }}" alt="{{ auth()->user()->name }}">
+                @endif
+            </div>            
+        </div>
+        <div class="info-container">
+            <div class="detail">
+                <div class="left">
+                    <p>Nama</p>
+                    <p>Email</p>
+                    <p>Telepon</p>
+                    <p>Jenis Kelamin</p>
+                </div>
+                <div class="right">
+                    <p>: {{ auth()->user()->name }}</p>
+                    <p>: {{ auth()->user()->email }}</p>
+                    <p>: {{ auth()->user()->phone }}</p>
+                    <p>: {{ auth()->user()->gender == 'L' ? 'Laki-laki' : 'Perempuan'}}</p>
+                </div>
+            </div>
+    </div>
+        <div class="button-container">
+            <a href="/profile/{{ auth()->user()->email }}/edit">
+                <button><i class="fas fa-edit"></i> Edit</button>
+            </a>
+        </div>
+    </div>
 @endsection

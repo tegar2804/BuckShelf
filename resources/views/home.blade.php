@@ -7,6 +7,7 @@
         <h1 class="mb-5">Selamat Datang, Guest!</h1>
     @endauth
 
+    @if($books->count() > 0)
     <h2>Rekomendasi Untuk Anda</h2>
     <div class="book-list mb-4">
         @foreach($books as $book)
@@ -49,4 +50,9 @@
         </a>
         @endforeach
     </div>
+    @else
+        <div class="container text-center mt-4">
+            <h3>Tidak Ada!</h3>
+        </div>
+    @endif
 @endsection

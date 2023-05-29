@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('cover')->nullable();
             $table->integer('price');
-            $table->integer('page');
             $table->text('desc');
             $table->timestamp('published_at');
             $table->timestamps();

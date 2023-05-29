@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Console\View\Components\Choice;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,14 +17,15 @@ class BookFactory extends Factory
      */
     public function definition(): array
     {
+        $cover = ["cover-images/book1.png", "cover-images/book2.png", "cover-images/book3.png"];
         return [
             'isbn' => fake()->isbn13(),
             'author_id' => fake()->numberBetween(1,3),
             'title' => fake()->sentence(mt_rand(2,8)),
             'slug' => fake()->slug(),
-            'page' => fake()->numberBetween(30,300),
             'price' => (fake()->numberBetween(30,150))*1000,
             'desc' => fake()->paragraph(),
+            'cover' => $cover[array_rand($cover)],
             'published_at' => now()
         ];
     }

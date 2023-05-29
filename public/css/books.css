@@ -93,3 +93,22 @@
   position: relative;
   border-radius: 20px;
 }
+
+.edit{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit button{
+  margin: 10px 20px;
+  padding: 0px 10px;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  background-color: #ffc107;
+  border: 2px solid rgba(0,0,0,1);
+  position: relative;
+  border-radius: 10px;
+}

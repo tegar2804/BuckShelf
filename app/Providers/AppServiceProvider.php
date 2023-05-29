@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\Book;
+use App\Models\User;
+use App\Models\Order;
+use App\Models\DetailOrder;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
-use App\Models\User;
-use App\Models\Book;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,6 +34,18 @@ class AppServiceProvider extends ServiceProvider
         
         Gate::define('purchased', function(User $user, Book $book){
             return !is_null($user->book->find($book->id));
+        });
+        
+        Gate::define('inCart', function(User $user, Book $book){
+            $cart = Book::whereIn('id', DetailOrder::whereIn('order_id', 
+                Order::where('user_id', $user->id)
+                ->pluck('id')
+                ->toArray())
+                    ->pluck('book_id')
+                    ->toArray())
+            ->get()
+            ->find($book->id);
+            return !is_null($cart);
         });
     }
 }

@@ -34,7 +34,7 @@ class BookController extends Controller
     
     public function show(Book $book){
         return view('book', [
-            'css_name' => ['navbar'],
+            'css_name' => ['navbar', 'book'],
             'title' => $book->title,
             'book' => $book
         ]);
