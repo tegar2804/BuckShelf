@@ -1,7 +1,7 @@
 /* NAVBAR */
 
 *{
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .custom-mt {
@@ -25,21 +25,21 @@ body {
 }
 
 .hanging-navbar .navbar {
-    height: 80px;
+  height: 80px;
 }
 
 .hanging-navbar .navbar .container-fluid{
-    max-width: 1410px;
+  max-width: 1410px;
 }
 
 .hanging-navbar .navbar-brand .logo {
-    height: 40px;
+  height: 40px;
 }
 
 .cart {
-    padding-right: 20px;
-    border-right: 2px solid black;
-  }
+  padding-right: 20px;
+  border-right: 2px solid black;
+}
   
 .btn .login{
   color: white;

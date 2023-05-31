@@ -36,9 +36,13 @@ label p{
     margin-right: 20px;
 }
 
-.container-cat input[type="checkbox"]:checked + label {
-  background-color: rgb(3, 3, 52);
+.container-cat label{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.container-cat input[type="checkbox"]:checked + label {
+  box-shadow: none;
+  background-color: rgb(3, 3, 52);
   font-weight: medium;
   color: #fff; 
 }

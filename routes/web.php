@@ -51,6 +51,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::post('/cart', 'CartController@addItem');
         Route::delete('/cart/{order_id}/{book_id}', 'CartController@removeItem');
         Route::put('/cart/{order}', 'CartController@payOrder');
-        Route::get('/invoice/{order:id}', 'InvoiceController@index');
+        Route::get('/invoice/{order}', 'InvoiceController@index');
+        Route::get('/history', 'HistoryController@index');
     });
 });

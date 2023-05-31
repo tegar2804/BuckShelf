@@ -9,9 +9,12 @@ use App\Http\Controllers\Controller;
 class InvoiceController extends Controller
 {
     public function index(Order $order){
+        if(auth()->user()->id != $order->user->id){
+            abort(401, "akses dilarang");
+        }
         return view('invoice', [
             'title' => 'Invoice',
-            'css_name' => ['navbar', 'invoice'],
+            'css_name' => ['invoice'],
             'order' => $order
         ]);
     }

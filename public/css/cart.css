@@ -196,9 +196,13 @@ ul {
   margin: 5px;
 }
 
+.payment-method .radio-item label{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
 .payment-method input[type="radio"]:checked + label {
-  background-color: rgb(3, 3, 52);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  font-weight: medium;
-  color: #fff; 
+    box-shadow: none;
+    background-color: rgb(3, 3, 52);
+    font-weight: medium;
+    color: #fff; 
 }
