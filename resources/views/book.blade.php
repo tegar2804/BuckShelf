@@ -41,17 +41,13 @@
         </div>
         <div class="button-container">
         @auth
-            @cannot('author', [$book]) 
-                @cannot('purchased', [$book])
-                    @cannot('inCart', [$book])
-                        <form action="/cart" method="post">
-                            @csrf
-                            <input type="text" id="id" name="id" value="{{ $book->id }}" required hidden>
-                            <button type="submit"><i class="fas fa-plus"></i> Tambahkan ke Keranjang</button>
-                        </form>
-                    @endcannot
-                @endcannot
-            @endcannot
+            @if(!Gate::check('author', [$book]) && !Gate::check('purchased', [$book]) && !Gate::check('inCart', [$book]))
+                <form action="/cart" method="post">
+                    @csrf
+                    <input type="text" id="id" name="id" value="{{ $book->id }}" required hidden>
+                    <button type="submit"><i class="fas fa-plus"></i> Tambahkan ke Keranjang</button>
+                </form>
+            @endif
         @else
             <a href="/login">
                 <button><i class="fas fa-plus"></i> Tambahkan ke Keranjang</button>

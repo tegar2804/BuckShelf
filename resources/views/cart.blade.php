@@ -37,9 +37,9 @@
       </div>
     </div>
     <div class="content right">
-        {{-- <div class="history-btn">
+        <div class="history-btn">
             <a href="/history"><i class="fas fa-history"></i> History Belanja</a>
-        </div> --}}
+        </div>
         @if($items->count() > 0)
         <form action="/cart/{{ $order->id }}" id="pay-{{ $order->id }}" method="POST">
             @method('put')

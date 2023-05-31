@@ -195,3 +195,10 @@ ul {
 .payment-method label {
   margin: 5px;
 }
+
+.payment-method input[type="radio"]:checked + label {
+  background-color: rgb(3, 3, 52);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  font-weight: medium;
+  color: #fff; 
+}
