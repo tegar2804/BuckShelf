@@ -10,7 +10,7 @@
     @if($books->count() > 0)
     <h2>Rekomendasi Untuk Anda</h2>
     <div class="book-list mb-4">
-        @foreach($books as $book)
+        @foreach($books_rate as $book)
         <a href="/book/{{ $book->slug }}">
             <div class="book">
                 <div class="book-frame">

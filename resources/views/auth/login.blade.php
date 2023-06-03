@@ -53,7 +53,7 @@
         </div>
 
         <div class="lupakatasandi">
-            <a href="#">Lupa kata sandi?</a>
+            <a href="/forgor">Lupa kata sandi?</a>
         </div>
 
         <div class="grupmasuk">

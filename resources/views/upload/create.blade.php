@@ -47,10 +47,6 @@
                 <p class="text-danger mt-1">{{ $message }}</p>
             @enderror
         </div>
-        {{-- <div class="mb-3">
-            <label for="page" class="form-label"><p>Jumlah Halaman</p></label>
-            <input type="number" class="form-control" id="page" placeholder="">
-        </div> --}}
         <div class="mb-3">
             <label for="cover" class="form-label"><p>Gambar Sampul</p></label>
             <img class="img-preview img-fluid" style="max-width: 200px; margin-bottom: 7px;">
@@ -62,8 +58,13 @@
             @enderror
         </div>
         <div class="mb-3">
-          <label for="book_file" class="form-label"><p>File Buku</p></label>
-          <input class="form-control" type="file" id="book_file">
+            <label for="book_file" class="form-label"><p>File Buku</p></label>
+            <input class="form-control" type="file" id="book_file" name="book_file">
+            @error('book_file')
+                <div class="invalid-feedback">
+                    <p class="text-danger mt-1">{{ $message }}</p>
+                </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="desc" class="form-label"><p>Deskripsi</p></label>

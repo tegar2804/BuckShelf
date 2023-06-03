@@ -31,7 +31,7 @@
             <label for="category" class="form-label">Kategori</label>
             <div class="container-cat">
                 @foreach($categories as $category)
-                <input type="checkbox" name="categories[]" class="btn-check" id="{{ $category->slug }}" autocomplete="off" value="{{ $category->id }}">
+                <input type="checkbox" name="categories[]" class="btn-check" id="{{ $category->slug }}" autocomplete="off" value="{{ $category->id }}" {{ in_array($category->id, $book->category->pluck('id')->toArray()) ? 'checked' : '' }}>
                 <label class="btn btn-primary" for="{{ $category->slug }}">{{ $category->name }}</label>
                 @endforeach
             </div>
@@ -48,10 +48,6 @@
                 <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
-        {{-- <div class="mb-3">
-            <label for="page" class="form-label">Jumlah Halaman</label>
-            <input type="number" class="form-control" id="page" placeholder="">
-        </div> --}}
 
         <div class="mb-3">
             <label for="cover" class="form-label">Gambar Sampul</label>

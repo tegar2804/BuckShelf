@@ -26,6 +26,7 @@ class BookFactory extends Factory
             'price' => (fake()->numberBetween(30,150))*1000,
             'desc' => fake()->paragraph(),
             'cover' => $cover[array_rand($cover)],
+            'book_file' => 'pdf-book\\08p8lHDOxFnTTqMnr6dY7tMEiRXj1FKOKLV6LQbD.pdf',
             'published_at' => now()
         ];
     }

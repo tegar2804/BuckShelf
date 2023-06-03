@@ -14,12 +14,4 @@ class CategoryController extends Controller
             'categories' => Category::all()
         ]);
     }
-    
-    // public function show(Category $category){
-    //     return view('books', [
-    //         'title' => $category->name,
-    //         'header_title' => 'Kategori: '.$category->name,
-    //         'book_categories' => $category->book_category
-    //     ]);
-    // }
 }

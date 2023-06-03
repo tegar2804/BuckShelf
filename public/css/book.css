@@ -55,13 +55,32 @@
     align-items: center;
 }
 
-.left-container button{
+.left-container .edit button{
     margin: 10px 20px;
     padding: 0px 10px;
     color: white;
     font-size: larger;
     font-weight: bold;
     background-color: #ffc107;
+    border: 2px solid rgba(0,0,0,1);
+    position: relative;
+    border-radius: 10px;
+}
+
+.left-container .unduh{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-container .unduh button{
+    margin: 10px 20px;
+    padding: 0px 10px;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    background-color: rgb(62, 215, 62);
     border: 2px solid rgba(0,0,0,1);
     position: relative;
     border-radius: 10px;
@@ -101,6 +120,18 @@
   border: 3px solid rgba(0,0,0,1);
   position: relative;
   border-radius: 10px;
+}
+
+.rating-container button {
+  padding: 5px 10px;
+  color: white;
+  font-size: larger;
+  font-weight: bolder;
+  background-color: rgb(3, 3, 52);
+  border: 2px solid rgba(0,0,0,1);
+  position: relative;
+  margin: 10px 0px;
+  border-radius: 7px;
 }
 
 .star-container {
@@ -189,5 +220,88 @@
 }
 
 .star-inactive{
-    color: rgba(82, 81, 81, 0.717);
+    color: black;
+}
+
+.rating-container {
+    display: inline-block;
+}
+
+.rating-stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.rating-stars input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.rating-stars label {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0px 5px;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+}
+
+.rating-stars.inactive label{
+    display: inline-block;
+    cursor: not-allowed;
+    margin: 0px 5px;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+}
+
+.rating-stars label:hover,
+.rating-stars label:hover ~ label,
+.rating-stars input[type="radio"]:checked ~ label {
+    color: #ffc107;
+}
+
+.alert {
+    position: relative;
+}
+
+.alert p {
+    margin-bottom: 0;
+}
+
+.alert .close {
+    position: absolute;
+    border: none;
+    background-color: #d1e7dd;
+    top: 0;
+    right: 0;
+    padding: 0.75rem 1.25rem;
+    color: inherit;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.alert .close:hover {
+    opacity: 1;
+}
+
+.rating-container .submit-button{
+    background-color: rgb(0, 255, 0);
+    min-width: 90px;    
+}
+
+.rating-container .reset-button{
+    background-color: rgb(255, 0, 0);
+    min-width: 90px;
+}
+
+.star-left .star-count i {
+    background-image: linear-gradient(to right, black 50%, #ffc107 50%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

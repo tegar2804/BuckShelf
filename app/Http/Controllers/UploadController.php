@@ -48,12 +48,14 @@ class UploadController extends Controller
             'price' => 'required|numeric|min_digits:4',
             'categories' => 'required',
             'cover' => 'required|image|file|max:102400',
+            'book_file' => 'required|mimes:pdf|max:2048000',
             'desc' => 'required'
         ]);
         $validated['author_id'] = auth()->user()->id;
         $category_book = $validated['categories'];
         $validated['published_at'] = now();
         $validated['cover'] = $request->file('cover')->store('cover-images');
+        $validated['book_file'] = $request->file('book_file')->store('pdf-book');
         unset($validated['categories']);
         
         $book = Book::create($validated);

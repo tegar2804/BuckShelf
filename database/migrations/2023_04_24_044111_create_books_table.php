@@ -17,9 +17,11 @@ return new class extends Migration
             $table->string('isbn')->unique();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('cover')->nullable();
+            $table->string('cover');
+            $table->string('book_file');
             $table->integer('price');
             $table->text('desc');
+            $table->text('rating')->default(0);
             $table->timestamp('published_at');
             $table->timestamps();
         });

@@ -14,6 +14,7 @@ class BookController extends Controller
             'title' => 'Buku',
             'css_name' => ['navbar', 'books'],
             'books' => Book::with('author')->latest()->take(5)->get(),
+            'books_rate' => Book::with('author')->orderBy('rating', 'desc')->take(5)->get(),
             'books_ran' => Book::with('author')->orderBy(Book::raw('RAND()'))->take(5)->get()
         ]);
     }

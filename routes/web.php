@@ -27,7 +27,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::post('/login', 'LoginController@login');
         Route::get('/register', 'RegisterController@index');
         Route::post('/register', 'RegisterController@regis');
-        //forgot-pass
+        Route::get('/forgor', 'ForgorController@index');
+        Route::post('/forgor', 'ForgorController@sendLink');
     });
     
     Route::group(['middleware' => ['isAdmin']], function() {
@@ -41,7 +42,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('/profile/{user:email}/edit', 'UserController@edit');
         Route::put('/profile/{user:email}', 'UserController@update');
 
-        Route::put('/book/{book:slug}', 'CollectionController@rate');
+        Route::put('/book/{book:slug}/rating', 'CollectionController@rate');
         Route::get('/collection', 'CollectionController@index');
 
         Route::get('/upload/checkSlug', 'UploadController@checkSlug');
@@ -53,5 +54,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::put('/cart/{order}', 'CartController@payOrder');
         Route::get('/invoice/{order}', 'InvoiceController@index');
         Route::get('/history', 'HistoryController@index');
+        Route::get('/download-pdf/{book:slug}', 'DownloadController@index');
     });
 });

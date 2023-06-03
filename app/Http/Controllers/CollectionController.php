@@ -24,15 +24,22 @@ class CollectionController extends Controller
     public function rate(Request $request, Book $book)
     {
         $rules = [];
-
         if($request->rate != $book->rate){
             $rules['rate'] = 'required|numeric|min:0|max:5';
         }
-
+        
         $validated = $request->validate($rules);
-
+        
         Collection::where('book_id', $book->id)->where('user_id', auth()->user()->id)->update($validated);
-
-        return redirect('/book/'.$book->slug);
+        $col = Collection::where('book_id', $book->id)->where('rate', '>', 0);
+        $total = $col->count();
+        if($total > 0){
+            $book->rating = (double) $col->sum('rate')/(1.0 * $total);
+        }else{
+            $book->rating = (double) $col->sum('rate');
+        }
+        $book->save();
+        
+        return redirect('/book/'.$book->slug)->with('rated', 'Rating berhasil di-upload!');
     }
 }

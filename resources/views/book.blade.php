@@ -1,6 +1,14 @@
 @extends('layouts.main')
 
 @section('container')
+    @if(session()->has('rated'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <p>{{ session('rated') }}</p>
+    </div>
+    @endif
     <div class="row">
         <div class="left-container">
             <div class="image-container">
@@ -11,6 +19,17 @@
                     <div class="edit">
                         <a href="/upload/{{ $book->slug }}/edit">
                             <button>EDIT</button>
+                        </a>
+                    </div>
+                    <div class="unduh">
+                        <a href="/download-pdf/{{ $book->slug }}">
+                            <button>UNDUH</button>
+                        </a>
+                    </div>
+                @elsecan('purchased', [$book])
+                    <div class="unduh">
+                        <a href="/download-pdf/{{ $book->slug }}">
+                            <button>UNDUH</button>
                         </a>
                     </div>
                 @endcan
@@ -65,14 +84,14 @@
         <div class="star-box">
             <div class="star-left">
                 <div class="rating-box">
-                    <h1>4.0</h1>
+                    <h1>{{ number_format($book->rating,1) }}</h1>
                     <h6>OUT OF 5</h6>
                     <div class="star-count">
-                        <i class="fa fa-star star-active mx-1"></i>
-                        <i class="fa fa-star star-active mx-1"></i>
-                        <i class="fa fa-star star-active mx-1"></i>
-                        <i class="fa fa-star star-active mx-1"></i>
-                        <i class="fa fa-star star-inactive mx-1"></i>
+                        <i class="fa fa-star mx-1" style="background-position: {{ (1-($book->rating <= 0 ? '1' : (1-$book->rating <= 0 ? '0' : 1-$book->rating)))*13.3 }}px 0px;"></i>
+                        <i class="fa fa-star mx-1" style="background-position: {{ (1-($book->rating-1 <= 0 ? '1' : (2-$book->rating <= 0 ? '0' : 2-$book->rating)))*13.3 }}px 0px;"></i>
+                        <i class="fa fa-star mx-1" style="background-position: {{ (1-($book->rating-2 <= 0 ? '1' : (3-$book->rating <= 0 ? '0' : 3-$book->rating)))*13.3 }}px 0px;"></i>
+                        <i class="fa fa-star mx-1" style="background-position: {{ (1-($book->rating-3 <= 0 ? '1' : (4-$book->rating <= 0 ? '0' : 4-$book->rating)))*13.3 }}px 0px;"></i>
+                        <i class="fa fa-star mx-1" style="background-position: {{ (1-($book->rating-4 <= 0 ? '1' : (5-$book->rating <= 0 ? '0' : 5-$book->rating)))*13.3 }}px 0px;"></i>
                     </div>
                 </div>
             </div>
@@ -123,51 +142,78 @@
                         </li>
                     </ul>
                     <ul class="rate-total">
-                        <li>8</li>
-                        <li>5</li>
-                        <li>4</li>
-                        <li>2</li>
-                        <li>1</li>
+                        <li>{{ $book->collection->where('rate', '==', 5)->count() }}</li>
+                        <li>{{ $book->collection->where('rate', '==', 4)->count() }}</li>
+                        <li>{{ $book->collection->where('rate', '==', 3)->count() }}</li>
+                        <li>{{ $book->collection->where('rate', '==', 2)->count() }}</li>
+                        <li>{{ $book->collection->where('rate', '==', 1)->count() }}</li>
                     </ul>
                 </div>
                 <div class="your-rate">
                     <h5>
                         Your Rating:
                     </h5>
-                    <div class="star-count">
-                        <i class="fa fa-star star-active mx-1"></i>
-                        <i class="fa fa-star star-active mx-1"></i>
-                        <i class="fa fa-star star-active mx-1"></i>
-                        <i class="fa fa-star star-inactive mx-1"></i>
-                        <i class="fa fa-star star-inactive mx-1"></i>
+                    <div class="rating-container">
+                        @auth
+                            @can('purchased', [$book])
+                            <form action="/book/{{ $book->slug }}/rating" method="post">
+                                @method('put')
+                                @csrf
+                                <div class="rating-stars">
+                                    <input type="radio" name="rate" id="star5" value="5" {{ auth()->user()->book->find($book->id)->collection->first()->rate == 5 ? 'checked' : ''}}>
+                                    <label for="star5"><i class="fas fa-star"></i></label>
+                                    <input type="radio" name="rate" id="star4" value="4" {{ auth()->user()->book->find($book->id)->collection->first()->rate == 4 ? 'checked' : ''}}>
+                                    <label for="star4"><i class="fas fa-star"></i></label>
+                                    <input type="radio" name="rate" id="star3" value="3" {{ auth()->user()->book->find($book->id)->collection->first()->rate == 3 ? 'checked' : ''}}>
+                                    <label for="star3"><i class="fas fa-star"></i></label>
+                                    <input type="radio" name="rate" id="star2" value="2" {{ auth()->user()->book->find($book->id)->collection->first()->rate == 2 ? 'checked' : ''}}>
+                                    <label for="star2"><i class="fas fa-star"></i></label>
+                                    <input type="radio" name="rate" id="star1" value="1" {{ auth()->user()->book->find($book->id)->collection->first()->rate == 1 ? 'checked' : ''}}>
+                                    <label for="star1"><i class="fas fa-star"></i></label>
+                                    <input type="radio" name="rate" id="star0" value="0" hidden>
+                                </div>
+                                <button class="submit-button" type="submit">submit</button>
+                                <button class="reset-button" onclick="checkRadio(); return false;">reset</button>
+                            </form>
+                            @else
+                            <div class="rating-stars inactive">
+                                <label><i class="fas fa-star star-inactive mx-1"></i></label>
+                                <label><i class="fas fa-star star-inactive mx-1"></i></label>
+                                <label><i class="fas fa-star star-inactive mx-1"></i></label>
+                                <label><i class="fas fa-star star-inactive mx-1"></i></label>
+                                <label><i class="fas fa-star star-inactive mx-1"></i></label>
+                            </div>
+                            @endcan
+                        @endauth
+                        </div>
                     </div>
-                </div>
             </div> 
         </div>    
     </div>
-{{-- 
-    @auth
-        @can('purchased', [$book])
-            <form action="/book/{{ $book->slug }}" method="post">
-                @method('put')
-                @csrf
-                <div class="mb-3">
-                    <label for="rate" class="form-label">Rating: ({{ auth()->user()->book->find($book->id)->collection[0]->rate }})</label>
-                    <select class="form-select" id="rate" name="rate">
-                        @for($i = 0; $i <= 5; $i++)
-                        <option value="{{ $i }}">{{ $i }}</option>
-                        @endfor
-                    </select>
-                    @error('rate')
-                        <div class="invalid-feedback">
-                            <p class="text-danger">{{ $message }}</p>
-                        </div>
-                    @enderror
-                </div>
-                <button type="submit" class="btn btn-primary">submit</button>
-            </form>
-        @endcan
-    @else
-        <a href="#"><h4>Rating</h4></a>
-    @endauth --}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const ratingContainer = document.querySelector('.rating-container');
+    const ratingInputs = ratingContainer.querySelectorAll('input[name="rate"]');
+
+    const initialRating = {{ auth()->user()->collection->where('book_id', $book->id)->first()->rate ?? 0 }};
+    
+    ratingInputs.forEach(function(input) {
+        if (input.value == initialRating) {
+            input.checked = true;
+        }
+    });
+
+    const closeButtons = document.querySelectorAll('.alert .close');
+    closeButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const alert = this.closest('.alert');
+            alert.remove(); // Menghapus alert dari DOM saat tombol close di klik
+        });
+    });
+});
+
+function checkRadio() {
+    document.getElementById("star0").checked = true;
+}
+</script>
 @endsection
