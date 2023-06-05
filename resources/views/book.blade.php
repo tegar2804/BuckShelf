@@ -190,6 +190,7 @@
             </div> 
         </div>    
     </div>
+@auth
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const ratingContainer = document.querySelector('.rating-container');
@@ -216,4 +217,5 @@ function checkRadio() {
     document.getElementById("star0").checked = true;
 }
 </script>
+@endauth
 @endsection

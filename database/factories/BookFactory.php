@@ -18,6 +18,7 @@ class BookFactory extends Factory
     public function definition(): array
     {
         $cover = ["cover-images/book1.png", "cover-images/book2.png", "cover-images/book3.png"];
+        $file = ["pdf-book/PDF-BUKU-1.pdf", "pdf-book/PDF-BUKU-2.pdf", "pdf-book/PDF-BUKU-3.pdf"];
         return [
             'isbn' => fake()->isbn13(),
             'author_id' => fake()->numberBetween(1,3),
@@ -26,7 +27,7 @@ class BookFactory extends Factory
             'price' => (fake()->numberBetween(30,150))*1000,
             'desc' => fake()->paragraph(),
             'cover' => $cover[array_rand($cover)],
-            'book_file' => 'pdf-book\\08p8lHDOxFnTTqMnr6dY7tMEiRXj1FKOKLV6LQbD.pdf',
+            'book_file' => $file[array_rand($file)],
             'published_at' => now()
         ];
     }

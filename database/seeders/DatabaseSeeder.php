@@ -26,7 +26,6 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('abcde123'),
             'phone' => '089665311527',
             'gender' => 'L'
-            // 'isAdmin' => 1
         ]);
         
         Book::factory(10)->create();
